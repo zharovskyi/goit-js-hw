@@ -5,6 +5,7 @@
 // заменяет значение premium на false
 // выводит содержимое объекта user в
 //  формате ключ:значение используя Object.keys() и for...of
+
 const user = {
     name: 'Mango',
     age: 20,
@@ -15,12 +16,10 @@ const user = {
   user.hobby = 'javscript';
   user.premium = 'false';
   for (let key in user) {
-    // console.log(user[key]);
+   
   }
   const retKey = Object.keys(user);
   const retVal = Object.values(user);
-//   console.log(retKey);
-//   console.log(retVal);
   const ent = Object.entries(user);
   for(const entry of ent){
     const key = entry[0];

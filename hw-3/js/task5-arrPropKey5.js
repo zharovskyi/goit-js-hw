@@ -23,7 +23,7 @@ const products = [{
   {
     name: 'Сканер',
     price: 2700,
-    quindex: 3
+    quantity: 3
   },
   {
     name: 'Дроид',
