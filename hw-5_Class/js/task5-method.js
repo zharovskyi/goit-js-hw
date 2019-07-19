@@ -63,7 +63,7 @@ class Car {
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-    if(this.speed < this.maxSpeed){
+    if((this.speed + value) <= this.maxSpeed){
       return this.speed += value;
     }
   }
@@ -72,8 +72,8 @@ class Car {
    * Отнимает от свойства speed полученное значение,
    * при условии что результирующая скорость не меньше нуля
    */
-  decelerate(value) {
-    if(this.speed > 0) {
+  decelerate(value) { 
+    if((this.speed - value) >= 0) {
       return this.speed = this.speed - value;
     }
   }
@@ -84,9 +84,9 @@ class Car {
    */
   drive(hours) {
     if(this.isOn = true){
-      return this.distance = hours * this.speed;
+      return this.distance = this.distance +  hours * this.speed;
     }
-    
+
   }
 }
 
@@ -109,21 +109,3 @@ Car.getSpecs(mustang);
 console.log(mustang.price); // 2000
 mustang.price = 4000;
 console.log(mustang.price); // 4000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
