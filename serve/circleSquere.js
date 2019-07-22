@@ -12,6 +12,10 @@
 // 6. Define static method, which takes radius and returns length of circumference for given
 // radius.
  class Circle {
+    static getRadius(r) {
+        //  this.length = 2 * this.p * r;
+         return 2 * this.p * r;
+     }
      constructor(center, radius){
          this.center = center;
          this.radius = radius;
@@ -23,14 +27,19 @@
         return this.length = 2* this.p * this.radius;
      }
      getCopyObject(obj){
-         return Object.assign(obj);
+         return Object.assign({}, obj);
      }
      getString(obj) {
          let str;
          str = JSON.stringify(obj);
          return str;
      }
+    
+
+
  }
  const newCircle = new Circle(10,10);
- const a = {length: 12};
- console.log(newCircle.getString(Circle));
+ const a = newCircle.getString(newCircle);
+ console.log(newCircle.getString(newCircle));
+ console.log(typeof a);
+ console.log(newCircle.getRadius(7));
