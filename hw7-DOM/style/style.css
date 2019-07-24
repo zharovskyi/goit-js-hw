@@ -1,3 +1,6 @@
 .form {
     border: 2px solid #000000;
 }
+.list__style {
+    list-style: none;
+}
