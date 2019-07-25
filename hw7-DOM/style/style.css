@@ -1,6 +1,41 @@
+
 .form {
+    margin: 50px;
     border: 2px solid #000000;
+    padding: 40px;
 }
 .list__style {
     list-style: none;
+}
+.section {
+    border: 2px solid #000000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.button {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.headline{
+    text-align: center;
+}
+.result {
+    text-align: center;
+}
+/* MODAL */
+.modal {
+
+}
+.modal__content {
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    background: grey;
+    text-align: center;
+}
+.modal__content.active {
+    visibility: visible;
 }

@@ -2,12 +2,18 @@ import task from "./defoult.js";
 // console.log(task.title);
 const form = document.querySelector('.form');
 
+let getResult = document.createElement('div');
+getResult.className = 'result';
+
+
 function createList(task) {
     const mainHeadline = document.createElement('h2');
+    mainHeadline.className = "headline";
     mainHeadline.textContent = task.title;
     let fragment = document.createDocumentFragment();
     task.questions.forEach((element,index) => {
         let section = document.createElement('section');
+        section.className = 'section';
         let headlineQuestion = document.createElement('h3');
         headlineQuestion.textContent = element.question;
         let ul = document.createElement('ul');
@@ -20,7 +26,7 @@ function createList(task) {
                     label.style.cursor = 'pointer';
                     let radio = document.createElement('input');
                         radio.setAttribute('type', 'radio');
-                        radio.setAttribute("value", indexValue+1);
+                        radio.setAttribute("value", indexValue);
                         radio.setAttribute('name', 'question' + (index+1));
                 label.prepend(radio);
             li.append(label);
@@ -29,28 +35,79 @@ function createList(task) {
         section.append(headlineQuestion, ul);
         fragment.append(section);
     })
-
+    
     form.prepend(mainHeadline,fragment);
 }
 createList(task);
 
-
 const taskQuestion = task.questions.map(el => {
-   return el.answer;
+   return el.answer;indexTestCheck
 })
-console.log(taskQuestion);
 
-let button = document.querySelector('button[type="submit"]');
+const modalButton = document.querySelector(".modal");
+const modalContent = document.querySelector('.modal__content');
+let button = document.querySelector('.button');
+
 button.addEventListener('click', testChek);
+
+
 function testChek(e) {
     e.preventDefault();
     let userAnswer = [];
     let chekInputArr = document.querySelectorAll('input[type="radio"]:checked');
+    console.log(chekInputArr);
     [...chekInputArr].map(el =>{
         userAnswer.push(+el.value);
     })
-    console.log(userAnswer);
+    compareAnswer(taskQuestion,userAnswer);   
 }
+
+function compareAnswer(taskQuestion,testChek) {
+    let counter = 0;
+    let indexTestCheck = 0;
+    for(let i of taskQuestion){
+        console.log(i, testChek);
+        if(i === testChek[indexTestCheck]){
+        counter +=1;
+        }
+        indexTestCheck +=1;
+        
+    }
+    console.log(counter);
+    return getResult.textContent = `Your result ${counter} right answer`;
+}
+form.append(getResult);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const formElement = form.elements.value;
+// console.log(formElement);
 // const answer1 = document.querySelector('[name="answer1"]:checked').value;
 // console.log(answer1);
 // const answer2 = document.querySelector('[name="answer2"]:checked').value;
