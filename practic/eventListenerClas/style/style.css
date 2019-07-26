@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .user-list {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    list-style: none;
+  }
+  
+  .user-list li {
+    width: 240px;
+    padding: 10px 15px;
+    border: 1px solid green;
+    cursor: pointer;
+  }
+  
+  .user-list li button {
+    display: block;
+    margin: 0 auto;
+  }
