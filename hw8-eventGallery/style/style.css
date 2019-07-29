@@ -6,6 +6,8 @@ html {
   *::before,
   *::after {
     box-sizing: inherit;
+    padding: 0;
+    margin: 0;
   }
   
   body {
@@ -155,4 +157,43 @@ html {
   
   .lightbox__button i {
     font-size: 36px;
+  }
+
+  /*
+   SLIDER 
+  */
+  .slider {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    /* height: 600px; */
+    position: relative;
+    overflow: hidden;
+  }
+  .slider__list {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .slider__listItem{
+    width: 100vw;
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1111;
+  }
+  .prev{
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+  .next.red {
+    background-color: red;
+    color: green;
   }
