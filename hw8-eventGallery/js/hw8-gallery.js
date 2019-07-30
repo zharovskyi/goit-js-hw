@@ -118,19 +118,19 @@ function changeImage(e){
         if(counter === image.length-1) {
             next.classList.add('red');
         }
-        else if (counter != image.length-1){
-            next.classList.toggle("red")
+        if (counter > image.length-1 || counter < image.length-1 ){
+            next.classList.remove("red");
         }
     
     } else if (e.target === prev) {
         if(counter > 0) {
             counter -= 1;
-            if(counter === image.length-1) {
+            if(counter === 0) {
                 prev.classList.add('red');
             }
-            else if (counter != image.length-1){
-                prev.classList.toggle("red")
-            }
+            // else if (counter != image.length-1){
+            //     prev.classList.toggle("red")
+            // }
         }
     }
 
