@@ -77,6 +77,9 @@ function close(e){
 
 
 
+
+
+
 // SLIDER
 const sliderUl = document.querySelector('.slider__list');
 const width = sliderUl.offsetWidth;
