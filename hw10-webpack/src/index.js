@@ -9,7 +9,7 @@ import itemTemplate from './templates/list.hbs';
 const ul = document.getElementById('menu');
 
 function buildMarcap(menus) {
-    const murkup = menus.map(menu => itemTemplate(menu));
+    const murkup = menus.map(menu => itemTemplate(menu)).join('');
     ul.insertAdjacentHTML('beforeend', murkup);
 }
 buildMarcap(menus);
