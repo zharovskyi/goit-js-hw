@@ -46,8 +46,8 @@ const taskQuestion = task.questions.map(el => {
 
 
 let button = document.querySelector('.button');
-
 button.addEventListener('click', testChek);
+
 
 
 function testChek(e) {
