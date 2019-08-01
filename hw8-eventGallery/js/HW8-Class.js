@@ -44,11 +44,7 @@ class Gallery {
         // console.log(e.currentTarget); CLICK HIGHER ELEMENT
         this.openModal.classList.add('is-open');
         window.addEventListener('keydown', this.keyPress.bind(this));
-        this.addImageModal(e.target);
-    }
-
-    addImageModal(target) {
-        document.querySelector('.lightbox___image').src = target.dataset.source;
+        document.querySelector('.lightbox___image').src = e.target.dataset.source
     }
 
     keyPress(e) {

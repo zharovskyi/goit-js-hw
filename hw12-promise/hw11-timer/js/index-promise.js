@@ -8,32 +8,69 @@
 // дни, часы, минуты и секунды в формате XX:XX:XX:XX. 
 // Количество дней может состоять из более чем двух цифр.
 
-new CountdownTimer({
-    selector: '#timer-1',
-    targetDate: new Date('Jul 17, 2019'),
-  });
+class CountdownTimer {
+  constructor({selector, targetDate}) {
+    this.refs = {};
+    this.refs.wrapper = document.querySelector(`${selector}`)
+    this.refs.days = this.refs.wrapper.querySelector('span[data-value="days"]'),
+    this.refs.hours = this.refs.wrapper.querySelector('span[data-value="hours"]'),
+    this.refs.min = this.refs.wrapper.querySelector('span[data-value="mins"]'),
+    this.refs.sec = this.refs.wrapper.querySelector('span[data-value="secs"]'),
+    this.endDate = targetDate.getTime();
+    this.timer();
+  }
 
-  /*
- * Оставшиеся дни: делим значение UTC на 1000 * 60 * 60 * 24, количество
- * миллисекунд в одном дне (миллисекунды * секунды * минуты * часы)
- */
-const days = Math.floor(time / (1000 * 60 * 60 * 24));
+  timer(){
+    setInterval(function (refs, endDate) {
+      let currentTime = new Date().getTime();
+      let time = endDate - currentTime;
+      refs.days.textContent = Math.floor(time / (1000 * 60 * 60 * 24));
+      refs.hours.textContent = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      refs.min.textContent = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+      refs.sec.textContent = Math.floor((time % (1000 * 60)) / 1000);
+    }, 1000, this.refs, this.endDate)
+  }
+  
+}
 
-/*
- * Оставшиеся часы: получаем остаток от предыдущего расчета с помощью оператора
- * остатка % и делим его на количество миллисекунд в одном часе
- * (1000 * 60 * 60 = миллисекунды * минуты * секунды)
- */
-const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-/*
- * Оставшиеся минуты: получаем оставшиеся минуты и делим их на количество
- * миллисекунд в одной минуте (1000 * 60 = миллисекунды * секунды)
- */
-const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
 
-/*
- * Оставшиеся секунды: получаем оставшиеся секунды и делим их на количество
- * миллисекунд в одной секунде (1000)
- */
-const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+
+
+
+
+
+
+
+// const refs = {
+  // days: document.querySelector('span[data-value="days"]'),
+  // hours: document.querySelector('span[data-value="hours"]'),
+  // min: document.querySelector('span[data-value="mins"]'),
+  // sec: document.querySelector('span[data-value="secs"]'),
+// }
+
+// const endDate = new Date('Sep 17, 2019').getTime();
+
+// let timer = setInterval(function () {
+//   let currentTime = new Date().getTime();
+//   let time = endDate - currentTime;
+//   refs.days.textContent = Math.floor(time / (1000 * 60 * 60 * 24));
+//   refs.hours.textContent = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   refs.min.textContent = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+//   refs.sec.textContent = Math.floor((time % (1000 * 60)) / 1000);
+// }, 1000) plag = new CountdownTimer();
+// plag.timer()
+
+
+
+
+
+
+// const plag = new CountdownTimer();
+// plag.timer(plag.refs, plag.endDate);
+
+const plag = new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Jul 17, 2099'),
+});
