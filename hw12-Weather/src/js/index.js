@@ -1,8 +1,8 @@
 
 
 import newsService from './services/servicesAPI';
-import PNotify from 'pnotify/dist/es/PNotify';
-import './getGeoPosition.js';
+// import PNotify from 'pnotify/dist/es/PNotify';
+import getCurrentPossition from './getGeoPosition.js';
 // import describeWeatherItem from './fetchWeather.js';
 import weather from '../template/weateher.hbs';
 import "pnotify/dist/PNotifyBrightTheme.css";
@@ -26,14 +26,8 @@ function searchFormSubmitHeandler(e) {
        refs.sectionWeather.innerHTML = murkup;
     //    refs.sectionWeather.insertAdjacentHTML('beforeend', murkup);
     });;
-    PNotify.notice({
-        title: 'Regular Notice',
-        text: 'Check me out! I\'m a notice.'
-      });
+  
 }
-
-
-
 
 function createListWeather(items){
     return weather(items);
