@@ -8,7 +8,7 @@ import "pnotify/dist/PNotifyBrightTheme.css";
 const baseUrl ='http://api.apixu.com/v1/current.json?key=f795b80deb1b45309ba93327190208';
 const refs = {
     searchForm: document.querySelector('#search-form'),
-    section: document.querySelector('.weather'),
+    section: document.querySelector('#weather'),
     icon: document.querySelector('.icon'),
     location: document.querySelector('span[data-field="location"]'),
     temp: document.querySelector('span[data-field="temp"]'),
