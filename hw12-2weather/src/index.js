@@ -5,7 +5,7 @@ import "pnotify/dist/PNotifyBrightTheme.css";
 
 
 
-const baseUrl ='http://api.apixu.com/v1/current.json?key=f795b80deb1b45309ba93327190208';
+const baseUrl ='https://api.apixu.com/v1/current.json?key=f795b80deb1b45309ba93327190208';
 const refs = {
     searchForm: document.querySelector('#search-form'),
     section: document.querySelector('#weather'),
@@ -15,7 +15,7 @@ const refs = {
     humidity: document.querySelector('span[data-field="humidity"]'),
     wind: document.querySelector('span[data-field="wind"]'),
     conditions: document.querySelector('span[data-field="conditions"]'),
-    baseUrl: 'http://api.apixu.com/v1/current.json?key=f795b80deb1b45309ba93327190208&lang=uk',
+    baseUrl: 'https://api.apixu.com/v1/current.json?key=f795b80deb1b45309ba93327190208&lang=uk',
 }
 
 refs.searchForm.addEventListener('submit', searchFormSubmitHeandler);
