@@ -6,6 +6,7 @@ const refs = {
     baseUrl: "/api/todo",
 }
 // Create Get
+let obj = {};
 
 function getPosts() {
     fetch(`${baseUrl}`)
@@ -15,6 +16,15 @@ function getPosts() {
         .then(data => {
             return data;
         });
+}
+
+function renderList(arr) {
+    let fragment = document.createDocumentFragment();
+    arr.forEach(el => {
+        let li = document.createElement("li");
+        li.textContent = el;
+    })
+    refs.ul.append(li);
 }
 
 //   Create Post
@@ -40,7 +50,6 @@ function createPost(data) {
 
 refs.form.addEventListener('submit', function (e) {
     e.preventDefault();
-    getPosts();
     createPost(data);
     let li = document.createElement("li");
     li.textContent = refs.item.value;
