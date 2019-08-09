@@ -1,0 +1,28 @@
+{
+  "pass": [
+    {
+      "id": 1,
+      "username": "Vasa Pypkin",
+      "roles": [
+        "olegzhora11@gmail.com",
+        "1111"
+      ]
+    },
+    {
+      "username": "tratata1@gmail.com",
+      "roles": [
+        "tratata1@gmail.com",
+        "1233123"
+      ],
+      "id": 2
+    },
+    {
+      "username": "olegzhora11@gmail.com",
+      "roles": [
+        "olegzhora11@gmail.com",
+        "asd"
+      ],
+      "id": 3
+    }
+  ]
+}

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --env.mode development --config ./webpack/config.js",
     "build": "webpack --env.mode production --config ./webpack/config.js",
+    "server": "json-server --watch ./src/server/db.json",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
