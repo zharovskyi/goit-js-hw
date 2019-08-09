@@ -1,5 +1,5 @@
-// Function which check loggin,corect 2-20characters,
-// only letters and numbers,numbers can not be first
+//// Function which check loggin,corect 2-20characters,
+// //only letters and numbers,numbers can not be first
 
 // function checkString (str) {
 //     const check =/\D/;
@@ -10,8 +10,9 @@
 // }
 
 
-// function takes string and finds all numbers including float
- function findNumber(str) {
-     return parseFloat(str);
+//// function takes string and finds all numbers including float
 
- }
+//  function findNumber(str) {
+//      return string.match(/[+-]?\d+(?:\.\d+)?/g).map(Number);
+
+//  }
