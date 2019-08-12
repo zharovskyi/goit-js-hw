@@ -27,12 +27,12 @@ function updateTable(e) {
                 // console.log(elem);
                 // console.log(ind);
                 elem.forEach((e,i) => {
-                    refs.tr[ind + 1].querySelectorAll('td');
-                    console.log(refs.tr[ind + 1].querySelectorAll('td'));
+                    let text = refs.tr[ind + 1].querySelectorAll('td');
+                    text.innerHTML = e;
+                    // console.log(text);
                     // for(let td of refs.td){
                         // refs.td[i].textContent = e;
-                        
-                      
+
                     // }
                     
                 })
